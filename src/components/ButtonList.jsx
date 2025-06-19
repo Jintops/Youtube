@@ -8,6 +8,7 @@ const ButtonList = () => {
     {
       list.map((item,index)=>
        <Button key={index} name={item} />
+       
       )
     }
         
