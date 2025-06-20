@@ -22,7 +22,7 @@ const ChatMessages=useSelector(store=>store.chat.messages)
   },[])
 
   return (
-    <div className='border border-black mx-8 h-[750px] p-2 bg-slate-100 rounded-xl overflow-scroll '>
+    <div className='border border-black mx-8 h-[750px] p-2 bg-slate-100 rounded-xl overflow-scroll flex flex-col-reverse'>
         <h1 className='px-2 text-xl  border-t-1'>Top chat</h1>
         
         {
