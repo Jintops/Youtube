@@ -26,17 +26,23 @@ const ChatMessages=useSelector(store=>store.chat.messages)
   },[])
 
   return (
+    <>
     <div className='border border-black mx-8 h-[750px] p-2 bg-slate-100 rounded-xl overflow-scroll flex flex-col-reverse'>
-        <h1 className='px-2 text-xl  border-t-1'>Top chat</h1>
+        <div>
         
         {
             ChatMessages.map((c)=>(
                  <ChatMessage name={c.name} message={c.message} image={c.image}/>
             ))
         }
-      
+      </div>
          
     </div>
+    <div className=' p-2 mx-8 border border-black'>
+      <input className='w-60' type='text'></input>
+      <button className='px-2 mx-2 bg-green-100'>Send</button>
+    </div>
+    </>
   )
 }
 
