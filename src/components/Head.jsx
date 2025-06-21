@@ -72,7 +72,7 @@ const Head = () => {
             </div>
 
             <div className="col-span-1">
-                <img className="h-8" alt="usericon" src="https://w7.pngwing.com/pngs/178/595/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png"></img>
+                <img className="h-8 rounded-full" alt="usericon" src="https://lh3.googleusercontent.com/ogw/AF2bZyhj13bzJooeBvioImitbj4j_K8jfpB0utepUE2y4ApyiA=s64-c-mo"></img>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import ChatMessage from './ChatMessage'
 import { useDispatch, useSelector } from 'react-redux'
 import { addMessage } from '../utils/chatSlice';
 import { generateRandomName, makeRandomMessage } from '../utils/helper';
-
+import photourl from '../utils/helper';
 const LiveChat = () => {
 
 const ChatMessages=useSelector(store=>store.chat.messages)
@@ -11,10 +11,14 @@ const ChatMessages=useSelector(store=>store.chat.messages)
   const dispatch=useDispatch();
 
   useEffect(()=>{
-
+      
     const i=setInterval(()=>{
+
+  const randomImage = photourl[Math.floor(Math.random() * photourl.length)];
+
      dispatch(addMessage({name:generateRandomName(), 
-        message:makeRandomMessage(15)}))
+        message:makeRandomMessage(15),
+        image:randomImage}))
     },2000);
 
     return ()=>clearInterval(i);
@@ -27,7 +31,7 @@ const ChatMessages=useSelector(store=>store.chat.messages)
         
         {
             ChatMessages.map((c)=>(
-                 <ChatMessage name={c.name} message={c.message} />
+                 <ChatMessage name={c.name} message={c.message} image={c.image}/>
             ))
         }
       
