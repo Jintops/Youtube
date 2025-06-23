@@ -5,6 +5,7 @@ import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
 
 
+
 const Head = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
@@ -71,9 +72,13 @@ const Head = () => {
 
             </div>
 
+ 
+
+
             <div className="col-span-1">
                 <img className="h-8 rounded-full" alt="usericon" src="https://lh3.googleusercontent.com/ogw/AF2bZyhj13bzJooeBvioImitbj4j_K8jfpB0utepUE2y4ApyiA=s64-c-mo"></img>
             </div>
+           
         </div>
     )
 }

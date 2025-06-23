@@ -10,12 +10,11 @@ const LiveChat = () => {
   const ChatMessages = useSelector((store) => store.chat.messages);
 
   const dispatch = useDispatch();
-const randomImage = photourl[Math.floor(Math.random() * photourl.length)];
+  const randomImage = photourl[Math.floor(Math.random() * photourl.length)];
 
   useEffect(() => {
     const i = setInterval(() => {
-      
-
+      const randomImage = photourl[Math.floor(Math.random() * photourl.length)];
       dispatch(
         addMessage({
           name: generateRandomName(),
@@ -51,9 +50,10 @@ const randomImage = photourl[Math.floor(Math.random() * photourl.length)];
           setLiveChat("");
         }}
       >
-        <input
-          className="w-60"
+        <input        
+          className="w-60 bg-gray-300 rounded-3xl px-2 text-black"
           type="text"
+          placeholder="Chat..."
           value={liveChat}
           onChange={(e) => {setLiveChat(e.target.value)}}
         ></input>
