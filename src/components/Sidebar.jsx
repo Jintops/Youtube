@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { SiYoutubeshorts } from "react-icons/si";
 import { MdSubscriptions } from "react-icons/md";
-
+import  {profileurl} from '../utils/helper'
+import { FaYoutube, FaMusic, FaChild } from "react-icons/fa";
+import { SiYoutubestudio } from "react-icons/si";
 import { MdPlaylistPlay, MdVideoLibrary, MdWatchLater, MdThumbUp } from "react-icons/md";
 import {
   MdWhatshot,        // Trending
@@ -86,40 +88,40 @@ const exploreItems = [
     
 
 
-<h1 className="font-bold pt-2 text-sm">You</h1>
+<h1 className="font-bold pt-2 text-sm px-2">You</h1>
 <ul>
-  <li className="mt-2">
-    <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
+  <li className="mt-[7px]">
+    <div className="flex items-center px-2 py-1 hover:bg-gray-100 rounded-md cursor-pointer">
       <MdHistory className="mr-4 text-lg" />
       <span className="text-sm">History</span>
     </div>
   </li>
-  <li className="mt-2">
-    <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
+  <li className="mt-[7px]">
+    <div className="flex items-center px-2 py-1 hover:bg-gray-100 rounded-md cursor-pointer">
       <MdPlaylistPlay className="mr-4 text-lg" />
       <span className="text-sm">Playlists</span>
     </div>
   </li>
-  <li className="mt-2">
-    <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
+  <li className="mt-[7px]">
+    <div className="flex items-center px-2 py-1 hover:bg-gray-100 rounded-md cursor-pointer">
       <MdVideoLibrary className="mr-4 text-lg" />
       <span className="text-sm">Your Videos</span>
     </div>
   </li>
-  <li className="mt-2">
-    <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
+  <li className="mt-[7px]">
+    <div className="flex items-center px-2 py-1 hover:bg-gray-100 rounded-md cursor-pointer">
       <MdVideoLibrary className="mr-4 text-lg" />
       <span className="text-sm">Your Courses</span>
     </div>
   </li>
-  <li className="mt-2">
-    <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
+  <li className="mt-[7px]">
+    <div className="flex items-center px-2 py-1 hover:bg-gray-100 rounded-md cursor-pointer">
       <MdWatchLater className="mr-4 text-lg" />
       <span className="text-sm">Watch Later</span>
     </div>
   </li>
-  <li className="mt-2">
-    <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
+  <li className="mt-[7px]">
+    <div className="flex items-center px-2 py-1 hover:bg-gray-100 rounded-md cursor-pointer">
       <MdThumbUp className="mr-4 text-lg" />
       <span className="text-sm">Liked Videos</span>
     </div>
@@ -129,20 +131,26 @@ const exploreItems = [
 
 {/* Subscriptions Section */}
 <hr className="my-4" />
-<h1 className="font-bold pt-2 text-sm">Subscriptions</h1>
+<h1 className="font-bold pt-2 text-sm px-2">Subscriptions</h1>
 <ul>
-  {["music", "Sports", "Games", "Movies"].map((item) => (
-    <li key={item} className="mt-2">
-      <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-        <span className="text-sm">{item}</span>
+  {["Blind Psycho","Akshai Saini", "Tech Travel Sujith",  "Karikku","Kudos Media"].map((item, index) => (
+    <li key={item} className="mt-[5px]">
+      <div className="flex items-center px-2 py-1 hover:bg-gray-100 rounded-md cursor-pointer">
+        <img
+          alt="yt pf"
+          src={profileurl[index % profileurl.length]} // ensure it loops if out of range
+          className="w-8 mr-4 rounded-full"
+        />
+        <span className="text-sm truncate">{item}</span>
       </div>
     </li>
   ))}
 </ul>
 
+
 {/* Explore Section */}
 <hr className="my-4" />
-<h1 className="font-bold pt-2 text-sm">Explore</h1>
+<h1 className="font-bold pt-2 text-sm px-2">Explore</h1>
 <ul>
   {exploreItems.map(({ name, icon }) => (
     <li key={name} className="mt-2">
@@ -156,12 +164,18 @@ const exploreItems = [
 
 {/* More From YouTube Section */}
 <hr className="my-4" />
-<h1 className="font-bold pt-2 text-sm">More From YouTube</h1>
+<h1 className="font-bold pt-2 text-sm px-2">More From YouTube</h1>
 <ul>
-  {["music", "Sports", "Games", "Movies"].map((item) => (
-    <li key={item} className="mt-2">
+  {[
+    { name: "Youtube Premium", icon: <FaYoutube className="mr-4 text-lg text-red-600" /> },
+    { name: "Youtube Studio", icon: <SiYoutubestudio className="mr-4 text-lg text-red-500" /> },
+    { name: "Youtube Music", icon: <FaMusic className="mr-4 text-lg text-red-500" /> },
+    { name: "Youtube Kids", icon: <FaChild className="mr-4 text-lg text-red-400" /> },
+  ].map(({ name, icon }) => (
+    <li key={name} className="mt-2">
       <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
-        <span className="text-sm">{item}</span>
+        {icon}
+        <span className="text-sm">{name}</span>
       </div>
     </li>
   ))}
