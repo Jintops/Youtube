@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
 import { FaMicrophone } from 'react-icons/fa';
+import { MdSearch } from "react-icons/md";
 
 const Head = () => {
 
@@ -53,25 +54,31 @@ const Head = () => {
                 <input className="w-1/2 border border-gray-400 rounded-l-full p-1 px-3 " type="text" placeholder="Search"
                     value={searchQuery} onChange={(e) => { setSearchQuery(e.target.value) }} 
                     onFocus={()=>setShowSuggestions(true)} onBlur={()=>setShowSuggestions(false)}></input>
-                <button className="p-1 px-2 border border-gray-400 rounded-r-full bg-gray-100">🔍</button>
+                <button className="p-1 px-2 border border-gray-400 rounded-r-full bg-gray-100"><MdSearch className="text-xl text-gray-700" /></button>
                 <div className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full cursor-pointer hover:bg-gray-200 ml-3">
       <FaMicrophone className="w-5 h-5 text-gray-600" />
     </div>
                 </div>
              
                
-            {showSuggestions && searchQuery &&   <div className="fixed p-2 bg-white w-[520px] shadow-lg rounded-lg border border-gray-100 ">
-                    <ul> 
-                        
-                        { 
-                            suggestions.map((s)=>(
-                                <li key={s} className="py-2 px-3 hover:bg-gray-100 ">🔍{s}</li>
-                            ))
-                        }
-                        
-                    
-                    </ul>
-                </div>}
+         {showSuggestions && searchQuery && (
+  <div className="fixed p-2 bg-white w-[520px] shadow-lg rounded-lg border border-gray-100">
+    <ul>
+      {suggestions.map((s) => (
+        <li
+          key={s}
+          className="py-2 px-3 hover:bg-gray-100 cursor-pointer"
+        >
+          <div className="flex items-center gap-2">
+            <MdSearch className="text-xl text-gray-700" />
+            <span>{s}</span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
 
             </div>
 

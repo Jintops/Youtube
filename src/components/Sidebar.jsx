@@ -119,7 +119,6 @@ const moreforYoutube=[
 </ul>
 
 
-{/* Subscriptions Section */}
 <hr className="my-4" />
 <h1 className="font-bold pt-2 text-sm px-2">Subscriptions</h1>
 <ul>
@@ -128,7 +127,7 @@ const moreforYoutube=[
       <div className="flex items-center px-2 py-1 hover:bg-gray-100 rounded-md cursor-pointer">
         <img
           alt="yt pf"
-          src={profileurl[index % profileurl.length]} // ensure it loops if out of range
+          src={profileurl[index % profileurl.length]} 
           className="w-8 mr-4 rounded-full"
         />
         <span className="text-sm truncate">{item}</span>
@@ -138,7 +137,6 @@ const moreforYoutube=[
 </ul>
 
 
-{/* Explore Section */}
 <hr className="my-4" />
 <h1 className="font-bold pt-2 text-sm px-2">Explore</h1>
 <ul>
@@ -152,7 +150,7 @@ const moreforYoutube=[
   ))}
 </ul>
 
-{/* More From YouTube Section */}
+
 <hr className="my-4" />
 <h1 className="font-bold pt-2 text-sm px-2">More From YouTube</h1>
 <ul>
@@ -166,7 +164,6 @@ const moreforYoutube=[
   ))}
 </ul>
 
-{/* Settings Section */}
 <hr className="my-4" />
 <ul>
   {supportItems.map(({ name, icon }) => (
