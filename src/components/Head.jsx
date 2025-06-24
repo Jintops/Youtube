@@ -3,8 +3,7 @@ import { toggleMenu } from "../utils/appSlice";
 import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API } from "../utils/constant";
 import { cacheResults } from "../utils/searchSlice";
-
-
+import { FaMicrophone } from 'react-icons/fa';
 
 const Head = () => {
 
@@ -50,12 +49,16 @@ const Head = () => {
             </div>
 
             <div className="col-span-9">
-                <div>
+                <div className="flex">
                 <input className="w-1/2 border border-gray-400 rounded-l-full p-1 px-3 " type="text" placeholder="Search"
                     value={searchQuery} onChange={(e) => { setSearchQuery(e.target.value) }} 
                     onFocus={()=>setShowSuggestions(true)} onBlur={()=>setShowSuggestions(false)}></input>
                 <button className="p-1 px-2 border border-gray-400 rounded-r-full bg-gray-100">🔍</button>
+                <div className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full cursor-pointer hover:bg-gray-200 ml-3">
+      <FaMicrophone className="w-5 h-5 text-gray-600" />
+    </div>
                 </div>
+             
                
             {showSuggestions && searchQuery &&   <div className="fixed p-2 bg-white w-[520px] shadow-lg rounded-lg border border-gray-100 ">
                     <ul> 

@@ -78,9 +78,9 @@ const Comment = ({ data }) => {
   return (
     <div className="flex shadow-sm bg-gray-100 p-2 rounded-lg my-2">
       <img
-        className="w-12 h-12"
+        className="w-12 h-12 rounded-full"
         alt="user"
-        src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
+        src="https://lh3.googleusercontent.com/ogw/AF2bZyhj13bzJooeBvioImitbj4j_K8jfpB0utepUE2y4ApyiA=s64-c-mo"
       />
       <div className="px-3">
         <p className="font-bold">{name}</p>
