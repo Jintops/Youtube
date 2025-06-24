@@ -9,26 +9,8 @@ import  {profileurl} from '../utils/helper'
 import { FaYoutube, FaMusic, FaChild } from "react-icons/fa";
 import { SiYoutubestudio } from "react-icons/si";
 import { MdPlaylistPlay, MdVideoLibrary, MdWatchLater, MdThumbUp } from "react-icons/md";
-import {
-  MdWhatshot,        // Trending
-  MdShoppingBag,     // Shopping
-  MdMusicNote,       // Music
-  MdLocalMovies,     // Films
-  MdLiveTv,          // Live
-  MdSportsSoccer,    // Sports
-  MdSportsEsports,   // Gaming
-  MdSchool,          // Courses
-  MdPodcasts,        // Podcasts
-  MdCheckroom        // Fashion & beauty (hanger icon as a substitute)
-} from "react-icons/md";
-import {
-  MdSettings,
-  MdOutlineFeedback,
-  MdHelpOutline,
-  MdHistory
-} from "react-icons/md";
-
-
+import { MdWhatshot,MdShoppingBag, MdMusicNote,MdLocalMovies,MdLiveTv,MdSportsSoccer, MdSportsEsports, MdSchool, MdPodcasts,MdCheckroom} from "react-icons/md";
+import {MdSettings,MdOutlineFeedback,MdHelpOutline,MdHistory} from "react-icons/md";
 
 
 const Sidebar = () => {
@@ -55,6 +37,14 @@ const exploreItems = [
   { name: "Fashion & beauty", icon: <MdCheckroom className="mr-4 text-lg" /> },
   { name: "Podcasts", icon: <MdPodcasts className="mr-4 text-lg" /> },
 ];
+
+const moreforYoutube=[
+  { name: "Youtube Premium", icon: <FaYoutube className="mr-4 text-lg text-red-600" /> },
+    { name: "Youtube Studio", icon: <SiYoutubestudio className="mr-4 text-lg text-red-500" /> },
+    { name: "Youtube Music", icon: <FaMusic className="mr-4 text-lg text-red-500" /> },
+    { name: "Youtube Kids", icon: <FaChild className="mr-4 text-lg text-red-400" /> },
+
+]
 
 
   // if(!isMenuOpen) return null
@@ -166,12 +156,7 @@ const exploreItems = [
 <hr className="my-4" />
 <h1 className="font-bold pt-2 text-sm px-2">More From YouTube</h1>
 <ul>
-  {[
-    { name: "Youtube Premium", icon: <FaYoutube className="mr-4 text-lg text-red-600" /> },
-    { name: "Youtube Studio", icon: <SiYoutubestudio className="mr-4 text-lg text-red-500" /> },
-    { name: "Youtube Music", icon: <FaMusic className="mr-4 text-lg text-red-500" /> },
-    { name: "Youtube Kids", icon: <FaChild className="mr-4 text-lg text-red-400" /> },
-  ].map(({ name, icon }) => (
+  {moreforYoutube.map(({ name, icon }) => (
     <li key={name} className="mt-2">
       <div className="flex items-center px-2 py-2 hover:bg-gray-100 rounded-md cursor-pointer">
         {icon}
